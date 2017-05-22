@@ -26,6 +26,9 @@ Gmmallett::Application.routes.draw do
   #     end
   #   end
 
+root 'quotes#index'
+
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
