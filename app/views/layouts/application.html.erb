@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gmmallett</title>
+  <title>Inspluration</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
+      <div class="col-xs-3">
       <%= link_to root_path, class: 'logo' do %>
       <div class="circle">
         <br />
@@ -17,13 +18,12 @@
         <br />
         INSPIRATION
       </div>
-      <%end %>
+    <%end %>
     </div>
-    </div>
-    <div class="col-xs-4 slogan">
+    <div class="col-sm-4 hidden-xs slogan">
       Splurting out inspirational life advice whenenever, wherever.
     </div>
-    <div class="col-xs-5 links">
+    <div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links">
       <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
       <%= link_to 'About', about_path %>
     </div>
@@ -39,8 +39,9 @@
         </div>
         <%= simple_form_for Quote.new do |f| %>
           <div class="modal-body">
-            <%= f.input :saying %>
-            <%= f.input :author %>
+            <%= f.input :saying, label: "What is the saying you want to add?" %>
+            <br />
+            <%= f.input :author, label: "Who is the author of the quote?" %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -66,10 +67,10 @@
 
   <div class="footer">
     <div class="container">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-sm-6">
         <%= link_to "This isn't enough, I need more", root_path, class: 'next-quote' %>
       </div>
-      <div class="col-xs-6 footer-blurb">
+      <div class="col-xs-12 col-sm-6 footer-blurb">
         Proudly hacked in Yarmouth, ME by Grace Mallett</a><br />
         Want to build your own Splurty Web App - <a href="http://thefirehoseproject.com">Learn how to code here</a>
       </div>
