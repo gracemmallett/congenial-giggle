@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <div class="col-xs-3">
+      <%= link_to root_path, class: 'logo' do %>
       <div class="circle">
         <br />
         For when 
@@ -17,13 +17,14 @@
         <br />
         INSPIRATION
       </div>
+      <%end %>
     </div>
     </div>
     <div class="col-xs-4 slogan">
-      Splurting out inspirational life quotes since 2017
+      Splurting out inspirational life advice whenenever, wherever.
     </div>
     <div class="col-xs-5 links">
-      <%= link_to 'Contribute', '#' %>
+      <%= link_to 'Contribute', new_quote_path %>
       <%= link_to 'About', '#' %>
     </div>
   </header>
@@ -32,7 +33,21 @@
 
   <br class="clear" />
 
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="col-xs-6">
+        <%= link_to "This isn't enough, I need more", root_path, class: 'next-quote' %>
+      </div>
+      <div class="col-xs-6 footer-blurb">
+        Proudly hacked in Yarmouth, ME by Grace Mallett</a><br />
+        Want to build your own Splurty Web App - <a href="http://thefirehoseproject.com">Learn how to code here</a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
